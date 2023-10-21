@@ -1,5 +1,6 @@
 package com.steelzoo.lifecycleapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -76,6 +77,12 @@ class MainActivity2 : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.layout_fragment,Fragment2())
                 .commit()
+        }
+
+        binding.btnNew1.setOnClickListener {
+            startActivity(Intent(baseContext,MainActivity::class.java).apply {
+//                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            })
         }
     }
 }

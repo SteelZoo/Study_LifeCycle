@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.core.content.ContextCompat
 import com.steelzoo.lifecycleapp.databinding.ActivityMainBinding
 
 const val TAG = "lifecycle_확인"
@@ -65,7 +66,11 @@ class MainActivity : AppCompatActivity() {
 
     fun setListener(){
         binding.btnTo2.setOnClickListener {
-            startActivity(Intent(baseContext,MainActivity2::class.java))
+            startActivity(Intent(baseContext,MainActivity2::class.java).apply {
+//                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            })
         }
     }
+
+
 }
